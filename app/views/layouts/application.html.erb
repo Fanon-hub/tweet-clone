@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TwitterClone</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    header, footer { background: #1DA1F2; color: white; padding: 10px; text-align: center; }
+    .tweet { padding: 10px; background: #f5f8fa; border-radius: 5px; }
+    a { color: #1DA1F2; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>TwitterClone</h2>
+  </header>
+
+  <%= yield %>
+
+  <footer>
+    &copy; <%= Time.now.year %> TwitterClone
+  </footer>
+</body>
+</html>

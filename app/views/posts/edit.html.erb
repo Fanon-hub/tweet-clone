@@ -1,0 +1,22 @@
+<h1><%= @post.new_record? ? "New Tweet" : "Edit Tweet" %></h1>
+
+<%= form_with model: @post, local: true do |f| %>
+  <% if @post.errors.any? %>
+    <div class="errors">
+      <% @post.errors.full_messages.each do |msg| %>
+        <p style="color:red;"><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :content %><br>
+    <%= f.text_area :content, rows: 3, maxlength: 140 %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<a href="<%= posts_path %>">Back</a>

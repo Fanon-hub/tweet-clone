@@ -1,0 +1,13 @@
+<h1>All Tweets</h1>
+<%= link_to "New Tweet", new_post_path %>
+
+<hr>
+
+<% @posts.each do |post| %>
+  <div>
+    <p><%= post.content %></p>
+    <%= link_to "Edit", edit_post_path(post) %>
+    <%= button_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+  <hr>
+<% end %>
